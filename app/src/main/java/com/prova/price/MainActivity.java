@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (validador){
             prestacao = valor * ((Math.pow((1+taxa), numero)*taxa))/((Math.pow((1+taxa), numero)-1));
-            txtPrest.setText("Prestação:\nR$ "+String.format("%.2f",prestacao));
-            txtPrest.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            txtPrest.setText("Prestação: R$ "+String.format("%.2f",prestacao));
             ArrayAdapter adapter = new PriceAdapter(this, preencherDados(prestacao, numero, valor, taxa));
 //            final Intent intent = new Intent(MainActivity.this, Resultado.class);
 //            intent.putExtra("adapter", preencherDados(prestacao, numero, valor, taxa));
