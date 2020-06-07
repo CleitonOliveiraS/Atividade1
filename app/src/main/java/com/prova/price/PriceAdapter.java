@@ -2,11 +2,14 @@ package com.prova.price;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
@@ -42,7 +45,7 @@ public class PriceAdapter extends ArrayAdapter<Price> {
         saldo.setText(String.format("%.2f",price.getSaldo()));
 
         if (position % 2 == 0){
-            linhaView.setBackgroundColor(Color.parseColor("#D8AAE9"));
+            linhaView.setBackground(ContextCompat.getDrawable(context, R.drawable.borda_linha));
         }
 
         return linhaView;

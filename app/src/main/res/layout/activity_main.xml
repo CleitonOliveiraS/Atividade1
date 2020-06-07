@@ -13,6 +13,7 @@
         android:id="@+id/layoutEntrada"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/borda_layout"
         android:orientation="vertical"
         android:padding="10dp"
@@ -119,7 +120,7 @@
                 android:id="@+id/btCalcular"
                 android:layout_width="121dp"
                 android:layout_height="40dp"
-                android:background="#8C00BE"
+                android:background="@drawable/borda_botao"
                 android:onClick="Calcular"
                 android:text="calcular"
                 android:textColor="@android:color/white" />
@@ -127,11 +128,25 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="358dp"
-        android:layout_height="155dp"
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/borda_layout"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutEntrada">
+
+        <ListView
+            android:id="@+id/lvTabela"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/borda_sem_sombra">
+
+        </ListView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

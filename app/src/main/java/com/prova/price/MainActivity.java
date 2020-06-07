@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edtNumero;
     private EditText edtTaxa;
     private TextView txtPrest;
+    private ListView lvTabela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         edtNumero = findViewById(R.id.edtNPrestacao);
         edtTaxa = findViewById(R.id.edtTaxa);
         txtPrest = findViewById(R.id.txtPrestacao);
+        lvTabela = findViewById(R.id.lvTabela);
 
     }
 
@@ -66,16 +68,17 @@ public class MainActivity extends AppCompatActivity {
             prestacao = valor * ((Math.pow((1+taxa), numero)*taxa))/((Math.pow((1+taxa), numero)-1));
             txtPrest.setText("Prestação:\nR$ "+String.format("%.2f",prestacao));
             txtPrest.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-//            ArrayAdapter adapter = new PriceAdapter(this, preencherDados(prestacao, numero, valor, taxa));
-            final Intent intent = new Intent(MainActivity.this, Resultado.class);
-            intent.putExtra("adapter", preencherDados(prestacao, numero, valor, taxa));
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(intent);
-                }
-            }, 5000);
+            ArrayAdapter adapter = new PriceAdapter(this, preencherDados(prestacao, numero, valor, taxa));
+//            final Intent intent = new Intent(MainActivity.this, Resultado.class);
+//            intent.putExtra("adapter", preencherDados(prestacao, numero, valor, taxa));
+//            Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    startActivity(intent);
+//                }
+//            }, 5000);
+            lvTabela.setAdapter(adapter);
         } else {
             Toast.makeText(MainActivity.this, "Preencha os Campos obrigatorios!", Toast.LENGTH_SHORT).show();
         }
