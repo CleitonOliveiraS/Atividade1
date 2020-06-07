@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8C00BE"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutEntrada"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borda_layout"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/grupoValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:text="Valor do Bem:"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/edtValorBem"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:backgroundTint="#8C00BE"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grupoNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nº de Prestações:"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/edtNPrestacao"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:backgroundTint="#8C00BE"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grupoTaxa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:text="Taxa a.m:"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/edtTaxa"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:backgroundTint="#8C00BE"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grupoBotao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPrestacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Prestação: R$ 0,00"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btCalcular"
+                android:layout_width="121dp"
+                android:layout_height="40dp"
+                android:background="#8C00BE"
+                android:onClick="Calcular"
+                android:text="calcular"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="358dp"
+        android:layout_height="155dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
