@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //            }, 5000);
             lvTabela.setAdapter(adapter);
         } else {
+            lvTabela.setAdapter(null);
             Toast.makeText(MainActivity.this, "Preencha os Campos obrigatorios!", Toast.LENGTH_SHORT).show();
         }
     }
