@@ -68,15 +68,6 @@ public class MainActivity extends AppCompatActivity {
             prestacao = valor * ((Math.pow((1+taxa), numero)*taxa))/((Math.pow((1+taxa), numero)-1));
             txtPrest.setText("Prestação: R$ "+String.format("%.2f",prestacao));
             ArrayAdapter adapter = new PriceAdapter(this, preencherDados(prestacao, numero, valor, taxa));
-//            final Intent intent = new Intent(MainActivity.this, Resultado.class);
-//            intent.putExtra("adapter", preencherDados(prestacao, numero, valor, taxa));
-//            Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    startActivity(intent);
-//                }
-//            }, 5000);
             lvTabela.setAdapter(adapter);
         } else {
             lvTabela.setAdapter(null);
